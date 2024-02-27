@@ -1,5 +1,49 @@
+import { motion } from 'framer-motion';
+const variants = {
+  opened: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+  closed: {
+    transition: {
+      // staggerChildren: 0.05,
+      // staggerDirection: -1,
+      type: 'spring',
+      stiffness: 20,
+      damping: 10,
+    },
+  },
+};
+const itemVariants = {
+  opened: {
+    y: 0,
+    opacity: 1,
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+  },
+};
 const Links = () => {
-  return <div className='links'>Links</div>;
+  const items = ['Homepage', 'Services', 'Portfolio', 'Contact', 'About'];
+
+  return (
+    <motion.div className='links' variants={variants}>
+      {items.map((item) => (
+        // section will have an id, so we write #${item}
+        <motion.a
+          href={`#${item}`}
+          key={item}
+          variants={itemVariants}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {item}
+        </motion.a>
+      ))}
+    </motion.div>
+  );
 };
 
 export default Links;
