@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+
 const variants = {
   opened: {
     transition: {
@@ -15,6 +16,7 @@ const variants = {
     },
   },
 };
+
 const itemVariants = {
   opened: {
     y: 0,
@@ -25,6 +27,7 @@ const itemVariants = {
     opacity: 0,
   },
 };
+
 const Links = () => {
   const items = ['Homepage', 'Services', 'Portfolio', 'Contact', 'About'];
 
