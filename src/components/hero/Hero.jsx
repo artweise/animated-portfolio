@@ -23,6 +23,7 @@ const textVariants = {
     },
   },
 };
+
 const sliderVariants = {
   initial: {
     x: 0,
@@ -55,7 +56,6 @@ const Hero = () => {
           </motion.div>
           <motion.img variants={textVariants} animate='scrollButton' src='/scroll.png' alt='' />
         </motion.div>
-        √
       </div>
       <motion.div
         className='slidingTextContainer'
